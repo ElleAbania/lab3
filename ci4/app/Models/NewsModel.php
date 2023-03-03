@@ -8,7 +8,6 @@ class NewsModel extends Model
 {
     protected $table = 'emabania_news';
     protected $allowedFields = ['title', 'slug', 'body'];
-
     {
         if ($slug === false) {
             return $this->findAll();
