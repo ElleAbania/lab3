@@ -8,7 +8,7 @@ class GuestModel extends Model
 {
     protected $table = 'emabania_myguests';
 
-    protected $allowedFields = ['name', 'email', 'website', 'comment', 'gender'];
+    protected $allowedFields = ['name', 'email', 'message'];
 
 	 public function getGuest()
     {     

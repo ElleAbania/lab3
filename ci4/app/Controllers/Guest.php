@@ -32,15 +32,13 @@ class Guest extends BaseController
                 . view('templates/footer');
         }
 
-        $post = $this->request->getPost(['name', 'email', 'website', 'comment', 'gender']);
+        $post = $this->request->getPost(['name', 'email', 'message']);
 
         // Checks whether the submitted data passed the validation rules.
         if (! $this->validateData($post, [
             'name' => 'required|max_length[255]|min_length[3]',
             'email' => 'required|max_length[255]|min_length[3]',
-            'website' => 'required|max_length[255]|min_length[3]',			
-            'comment'  => 'required|max_length[5000]|min_length[10]',
-            'gender' => 'required|max_length[255]|min_length[3]',			
+            'message' => 'required|max_length[255]|min_length[3]'					
         ])) {
             // The validation fails, so returns the form.
             return view('templates/header', ['title' => 'Add a guest entry'])
@@ -53,9 +51,7 @@ class Guest extends BaseController
         $model->save([
             'name' => $post['name'],
             'email'  => $post['email'],
-            'website'  => $post['website'],
-            'comment'  => $post['comment'],
-            'gender'  => $post['gender'],
+            'message'  => $post['message']
         ]);
 
         return view('templates/header', ['title' => 'Add a Guest Entry'])

@@ -3,16 +3,20 @@
 <?= session()->getFlashdata('error') ?>
 <?= validation_list_errors() ?>
 
-<form action="/news/create" method="post">
+<form action="create" method="post">
     <?= csrf_field() ?>
 
-    <label for="title">Title</label>
-    <input type="input" name="title" value="<?= set_value('title') ?>">
+    <label for="name">Name</label>
+    <input type="input" name="name" value="<?= set_value('name') ?>">
     <br>
 
-    <label for="body">Text</label>
-    <textarea name="body" cols="45" rows="4"><?= set_value('body') ?></textarea>
+    <label for="email">Email</label>
+    <input type="input" name="email" value="<?= set_value('email') ?>">
     <br>
 
-    <input type="submit" name="submit" value="Create news item">
+    <label for="message">Message</label>
+    <textarea name="message" cols="45" rows="4"><?= set_value('message') ?></textarea>
+    <br>
+
+    <input type="submit" name="submit" value="Create guest entry">
 </form>

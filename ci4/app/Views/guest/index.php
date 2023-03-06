@@ -12,7 +12,7 @@
 		<th>-----</th>
 		 <th><?= esc($guest_item['name']) ?> </th>
          <th><?= esc($guest_item['email']) ?> </th>
-		 <th><?= esc($guest_item['comment']) ?> </th>
+		 <th><?= esc($guest_item['message']) ?> </th>
 		</tr>
 		</table>
         </div>
@@ -23,3 +23,5 @@
     <p>Unable to find any guest for you.</p>
 
 <?php endif ?>
+
+<a href="guest/create" class="btn btn-primary">Register</a>
